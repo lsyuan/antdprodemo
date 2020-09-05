@@ -1,9 +1,9 @@
-import { AlipayCircleOutlined, TaobaoCircleOutlined, WeiboCircleOutlined } from '@ant-design/icons';
+import { MailOutlined, TaobaoCircleOutlined, WeiboCircleOutlined } from '@ant-design/icons';
 import { Alert, Checkbox, message } from 'antd';
 import React, { useState } from 'react';
 import { Link, SelectLang, useModel } from 'umi';
 import { getPageQuery } from '@/utils/utils';
-import logo from '@/assets/logo.svg';
+import logo from '@/assets/logo_blue.png';
 import { LoginParamsType, fakeAccountLogin } from '@/services/login';
 import Footer from '@/components/Footer';
 import LoginFrom from './components/Login';
@@ -87,10 +87,10 @@ const Login: React.FC<{}> = () => {
           <div className={styles.header}>
             <Link to="/">
               <img alt="logo" className={styles.logo} src={logo} />
-              <span className={styles.title}>Ant Design</span>
+              <span className={styles.title}>智物云</span>
             </Link>
           </div>
-          <div className={styles.desc}>Ant Design 是西湖区最具影响力的 Web 设计规范</div>
+          <div className={styles.desc}>卫生信息标准应用服务平台(1.0)</div>
         </div>
 
         <div className={styles.main}>
@@ -168,9 +168,7 @@ const Login: React.FC<{}> = () => {
             <Submit loading={submitting}>登录</Submit>
             <div className={styles.other}>
               其他登录方式
-              <AlipayCircleOutlined className={styles.icon} />
-              <TaobaoCircleOutlined className={styles.icon} />
-              <WeiboCircleOutlined className={styles.icon} />
+              <MailOutlined className={styles.icon} /> 
               <Link className={styles.register} to="/user/register">
                 注册账户
               </Link>

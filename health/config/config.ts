@@ -10,7 +10,7 @@ export default defineConfig({
     hmr: true,
   },
   layout: {
-    name: 'Ant Design Pro',
+    name: '智物云卫生信息标准应用服务平台',
     locale: true,
     siderWidth: 208,
   },
@@ -70,12 +70,6 @@ export default defineConfig({
     {
       path: '/',
       redirect: '/welcome',
-    },
-    {
-      name: '基础表单',
-      icon: 'smile',
-      path: '/formbasicform',
-      component: './FormBasicFormTwo',
     },
     {
       name: '高级表单',

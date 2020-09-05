@@ -12,7 +12,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: 'Ant Design Pro',
+  title: '智物云卫生信息标准应用服务平台',
   pwa: false,
   iconfontUrl: '',
 } as LayoutSettings & {
