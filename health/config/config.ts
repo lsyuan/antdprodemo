@@ -38,6 +38,12 @@ export default defineConfig({
           path: '/user/login',
           component: './user/login',
         },
+        {
+          name: '注册页',
+          icon: 'smile',
+          path: '/user/register',
+          component: './user/Register',
+        },
       ],
     },
     {
