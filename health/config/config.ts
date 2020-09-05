@@ -53,6 +53,12 @@ export default defineConfig({
       component: './Welcome',
     },
     {
+      name: 'list.table-list',
+      icon: 'table',
+      path: '/list',
+      component: './ListTableList',
+    },
+    {
       path: '/admin',
       name: 'admin',
       icon: 'crown',
@@ -68,17 +74,11 @@ export default defineConfig({
       ],
     },
     {
-      name: 'list.table-list',
-      icon: 'table',
-      path: '/list',
-      component: './ListTableList',
-    },
-    {
       path: '/',
       redirect: '/welcome',
     },
     {
-      name: '高级表单',
+      name: '系统报告',
       icon: 'smile',
       path: '/formadvancedform',
       component: './FormAdvancedForm',

@@ -4,15 +4,15 @@ export default {
   navTheme: 'light',
   // 拂晓蓝
   primaryColor: '#1890ff',
-  layout: 'mix',
+  layout: 'top', // 顶部菜单
   contentWidth: 'Fluid',
-  fixedHeader: false,
+  fixedHeader: true, // 固定顶部菜单
   fixSiderbar: true,
   colorWeak: false,
   menu: {
     locale: true,
   },
-  title: '智物云卫生信息标准应用服务平台',
+  title: '卫生标准平台',
   pwa: false,
   iconfontUrl: '',
 } as LayoutSettings & {
