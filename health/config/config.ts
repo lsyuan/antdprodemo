@@ -47,10 +47,10 @@ export default defineConfig({
       ],
     },
     {
-      path: '/welcome',
-      name: 'welcome',
-      icon: 'smile',
-      component: './Welcome',
+      path: '/dashboard',
+      name: '主页',
+      icon: 'home',
+      component: './dashboard',
     },
     {
       name: 'list.table-list',
@@ -61,7 +61,7 @@ export default defineConfig({
     {
       path: '/admin',
       name: 'admin',
-      icon: 'crown',
+      icon: 'home',
       access: 'canAdmin',
       component: './Admin',
       routes: [
@@ -75,12 +75,36 @@ export default defineConfig({
     },
     {
       path: '/',
-      redirect: '/welcome',
+      redirect: '/dashboard',
     },
     {
       name: '系统报告',
-      icon: 'smile',
+      icon: 'home',
       path: '/formadvancedform',
+      component: './FormAdvancedForm',
+    },
+    {
+      name: '索引编制',
+      icon: 'home',
+      path: '/formadvancedform4',
+      component: './FormAdvancedForm',
+    },
+    {
+      name: '系统管理',
+      icon: 'setting',
+      path: '/formadvancedform1',
+      component: './FormAdvancedForm',
+    },
+    {
+      name: '联系我们',
+      icon: 'home',
+      path: '/formadvancedform2',
+      component: './FormAdvancedForm',
+    },
+    {
+      name: '使用帮助',
+      icon: 'read',
+      path: '/formadvancedform3',
       component: './FormAdvancedForm',
     },
     {
