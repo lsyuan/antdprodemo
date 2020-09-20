@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { Link, SelectLang, useModel } from 'umi';
 import { getPageQuery } from '@/utils/utils';
 import logo from '@/assets/logo_blue.png';
-import { LoginParamsType, fakeAccountLogin } from '@/services/login';
+import { LoginParamsType, accountLogin } from '@/services/login';
 import Footer from '@/components/Footer';
 import LoginFrom from './components/Login';
 import styles from './style.less';
@@ -58,9 +58,10 @@ const Login: React.FC<{}> = () => {
     setSubmitting(true);
     try {
       // 登录
-      const msg = await fakeAccountLogin({ ...values, type });
-      if (msg.status === 'ok') {
+      const msg = await accountLogin({ ...values, type });
+      if (msg.response.status === 200) {
         message.success('登录成功！');
+        window.sessionStorage.setItem('token', "Bearer " + msg.data.token ?? "Bearer ")
         replaceGoto();
         setTimeout(() => {
           refresh();
@@ -68,7 +69,7 @@ const Login: React.FC<{}> = () => {
         return;
       }
       // 如果失败去设置用户错误信息
-      setUserLoginState(msg);
+      setUserLoginState(msg.data);
     } catch (error) {
       message.error('登录失败，请重试！');
     }
@@ -168,7 +169,7 @@ const Login: React.FC<{}> = () => {
             <Submit loading={submitting}>登录</Submit>
             <div className={styles.other}>
               其他登录方式
-              <MailOutlined className={styles.icon} /> 
+              <MailOutlined className={styles.icon} />
               <Link className={styles.register} to="/user/register">
                 注册账户
               </Link>

@@ -9,7 +9,7 @@ declare namespace API {
       key: string;
       label: string;
     }[];
-    userid?: string;
+    id?: number;
     access?: 'user' | 'guest' | 'admin';
     unreadCount?: number;
   }
@@ -17,6 +17,9 @@ declare namespace API {
   export interface LoginStateType {
     status?: 'ok' | 'error';
     type?: string;
+    token?: string;
+    username:string;
+    role:string;
   }
 
   export interface NoticeIconData {

@@ -75,12 +75,7 @@ const SalesCard = ({
               <div className={styles.salesBar}>
                 <Bar
                   height={295}
-                  title={
-                    <FormattedMessage
-                      id="dashboard.analysis.sales-trend"
-                      defaultMessage="Sales Trend"
-                    />
-                  }
+                  title={}
                   data={salesData}
                 />
               </div>

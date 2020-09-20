@@ -33,14 +33,17 @@ const HeaderRow = () => (
     <Row gutter={24} type="flex">
         <Col {...topColResponsiveProps}>
             <h3 style={{ width: '30%', display: 'inline-block' }}>监测主题：</h3>
-            <Select defaultValue="lucy" style={{ width: '70%' }} onChange={handleChange}>
-                <Option value="jack">Jack</Option>
-                <Option value="lucy">Lucy</Option>
-                <Option value="Yiminghe">yiminghe</Option>
+            <Select defaultValue="GalanceView" style={{ width: '70%' }} onChange={handleChange}>
+                <Option value="GalanceView">总体情况</Option>
+                <Option value="MetaData">数据元</Option>
+                <Option value="DataSet">数据集</Option>
+                <Option value="ShareFiles">共享文档</Option>
+                <Option value="Indicator">统计指标</Option>
+                <Option value="Disease">疾病名称</Option>
             </Select>
         </Col>
         <Col {...topCenterColResponsiveProps}>
-            <Title level={3} style={{ textAlign: "center" }}>智物云卫生信息标准服务动态监测</Title>
+            <Title level={3} style={{ textAlign: "center" }}>卫生信息标准服务动态监测</Title>
         </Col>
         <Col {...topColResponsiveProps} style={{ textAlign: "right" }}>
             <Radio.Group>

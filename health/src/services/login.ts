@@ -1,4 +1,11 @@
-import { request } from 'umi';
+import { extend } from 'umi-request';
+
+const request = extend({
+  headers: {
+    'Content-Type': 'application/json', 
+  },
+  getResponse: true,
+});
 
 export interface LoginParamsType {
   username: string;
@@ -6,10 +13,12 @@ export interface LoginParamsType {
   mobile: string;
   captcha: string;
   type: string;
+  grant_type: string;
 }
 
-export async function fakeAccountLogin(params: LoginParamsType) {
-  return request<API.LoginStateType>('/api/login/account', {
+export async function accountLogin(params: LoginParamsType) {
+  params.grant_type = 'password'
+  return request<API.LoginStateType>('/api/v1/users/authenticate', {
     method: 'POST',
     data: params,
   });
