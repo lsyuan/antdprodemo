@@ -1,11 +1,4 @@
-import { extend } from 'umi-request';
-
-const request = extend({
-  headers: {
-    'Content-Type': 'application/json', 
-  },
-  getResponse: true,
-});
+import { request } from 'umi';
 
 export interface LoginParamsType {
   username: string;

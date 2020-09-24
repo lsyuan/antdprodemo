@@ -10,7 +10,7 @@ export default {
   fixSiderbar: true,
   colorWeak: false,
   menu: {
-    locale: true,
+    locale: false,
   },
   title: '智物云卫生信息标准服务平台',
   pwa: false,

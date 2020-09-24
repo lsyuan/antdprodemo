@@ -1,12 +1,5 @@
-import { extend } from 'umi-request';
-
-const request = extend({
-  headers: {
-    'Content-Type': 'application/json',
-    'Authorization': window.sessionStorage.getItem('token') ?? "",
-  }, 
-});
-
+import { request } from 'umi';
+ 
 export async function query() {
   return request<API.CurrentUser[]>('/api/v1/users');
 }

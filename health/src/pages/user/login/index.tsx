@@ -59,9 +59,10 @@ const Login: React.FC<{}> = () => {
     try {
       // 登录
       const msg = await accountLogin({ ...values, type });
-      if (msg.response.status === 200) {
+      console.log(msg)
+      if (msg.token) {
         message.success('登录成功！');
-        window.sessionStorage.setItem('token', "Bearer " + msg.data.token ?? "Bearer ")
+        window.sessionStorage.setItem('token', "Bearer " + msg.token ?? "Bearer ")
         replaceGoto();
         setTimeout(() => {
           refresh();
@@ -69,7 +70,7 @@ const Login: React.FC<{}> = () => {
         return;
       }
       // 如果失败去设置用户错误信息
-      setUserLoginState(msg.data);
+      setUserLoginState(msg);
     } catch (error) {
       message.error('登录失败，请重试！');
     }

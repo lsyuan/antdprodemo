@@ -75,7 +75,6 @@ const SalesCard = ({
               <div className={styles.salesBar}>
                 <Bar
                   height={295}
-                  title={}
                   data={salesData}
                 />
               </div>

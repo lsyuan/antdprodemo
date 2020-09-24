@@ -93,4 +93,10 @@ const errorHandler = (error: ResponseError) => {
 
 export const request: RequestConfig = {
   errorHandler,
+  prefix: 'http://localhost:63180',
+  headers: {
+    'Content-Type': 'application/json', 
+    'Authorization': window.sessionStorage.getItem('token') ?? "",
+  },
+  // getResponse: true,
 };
