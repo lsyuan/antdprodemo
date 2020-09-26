@@ -78,60 +78,64 @@ const TableList: React.FC<{}> = () => {
   const actionRef = useRef<ActionType>();
   const [selectedRowsState, setSelectedRows] = useState<TableListItem[]>([]);
   const columns: ProColumns<TableListItem>[] = [
+    // {
+    //   title: '规则名称',
+    //   dataIndex: 'name',
+    //   rules: [
+    //     {
+    //       required: true,
+    //       message: '规则名称为必填项',
+    //     },
+    //   ],
+    // },
     {
-      title: '规则名称',
-      dataIndex: 'name',
-      rules: [
-        {
-          required: true,
-          message: '规则名称为必填项',
-        },
-      ],
-    },
-    {
-      title: '描述',
-      dataIndex: 'desc',
+      title: '用户名',
+      dataIndex: 'username',
       valueType: 'textarea',
     },
     {
-      title: '服务调用次数',
-      dataIndex: 'callNo',
+      title: '角色',
+      dataIndex: 'role',
       sorter: true,
-      hideInForm: true,
-      renderText: (val: string) => `${val} 万`,
-    },
-    {
-      title: '状态',
-      dataIndex: 'status',
-      hideInForm: true,
+      // renderText: (val: string) => `${val} 万`,
       valueEnum: {
-        0: { text: '关闭', status: 'Default' },
-        1: { text: '运行中', status: 'Processing' },
-        2: { text: '已上线', status: 'Success' },
-        3: { text: '异常', status: 'Error' },
+        0: { text: '管理员', status: 'Admin' },
+        1: { text: '普通用户', status: 'User' },
       },
     },
-    {
-      title: '上次调度时间',
-      dataIndex: 'updatedAt',
-      sorter: true,
-      valueType: 'dateTime',
-      hideInForm: true,
-      renderFormItem: (item, { defaultRender, ...rest }, form) => {
-        const status = form.getFieldValue('status');
-        if (`${status}` === '0') {
-          return false;
-        }
-        if (`${status}` === '3') {
-          return <Input {...rest} placeholder="请输入异常原因！" />;
-        }
-        return defaultRender(item);
-      },
-    },
+    // {
+    //   title: '状态',
+    //   dataIndex: 'status',
+    //   hideInForm: true,
+    //   valueEnum: {
+    //     0: { text: '关闭', status: 'Default' },
+    //     1: { text: '运行中', status: 'Processing' },
+    //     2: { text: '已上线', status: 'Success' },
+    //     3: { text: '异常', status: 'Error' },
+    //   },
+    // },
+    // {
+    //   title: '上次调度时间',
+    //   dataIndex: 'updatedAt',
+    //   sorter: true,
+    //   valueType: 'dateTime',
+    //   hideInForm: true,
+    //   renderFormItem: (item, { defaultRender, ...rest }, form) => {
+    //     const status = form.getFieldValue('status');
+    //     if (`${status}` === '0') {
+    //       return false;
+    //     }
+    //     if (`${status}` === '3') {
+    //       return <Input {...rest} placeholder="请输入异常原因！" />;
+    //     }
+    //     return defaultRender(item);
+    //   },
+    // },
     {
       title: '操作',
       dataIndex: 'option',
       valueType: 'option',
+      width: 150,
       render: (_, record) => (
         <>
           <a
@@ -140,10 +144,10 @@ const TableList: React.FC<{}> = () => {
               setStepFormValues(record);
             }}
           >
-            配置
+            修改
           </a>
           <Divider type="vertical" />
-          <a href="">订阅警报</a>
+          <a href="">重置密码</a>
         </>
       ),
     },
@@ -152,9 +156,9 @@ const TableList: React.FC<{}> = () => {
   return (
     <PageContainer>
       <ProTable<TableListItem>
-        headerTitle="查询表格"
+        headerTitle="用户列表"
         actionRef={actionRef}
-        rowKey="key"
+        rowKey="id"
         toolBarRender={() => [
           <Button type="primary" onClick={() => handleModalVisible(true)}>
             <PlusOutlined /> 新建

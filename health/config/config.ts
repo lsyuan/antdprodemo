@@ -119,6 +119,7 @@ export default defineConfig({
   // @ts-ignore
   title: false,
   ignoreMomentLocale: true,
+  // 不使用代理!!!
   // proxy: proxy[REACT_APP_ENV || 'dev'],
   manifest: {
     basePath: '/',
