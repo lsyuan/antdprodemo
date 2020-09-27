@@ -103,17 +103,18 @@ const TableList: React.FC<{}> = () => {
         1: { text: '普通用户', status: 'User' },
       },
     },
-    // {
-    //   title: '状态',
-    //   dataIndex: 'status',
-    //   hideInForm: true,
-    //   valueEnum: {
-    //     0: { text: '关闭', status: 'Default' },
-    //     1: { text: '运行中', status: 'Processing' },
-    //     2: { text: '已上线', status: 'Success' },
-    //     3: { text: '异常', status: 'Error' },
-    //   },
-    // },
+    {
+      title: '状态',
+      dataIndex: 'status',
+      hideInForm: true,
+      hideInSearch: true,
+      valueEnum: {
+        0: { text: '待激活', status: '0' },
+        1: { text: '正常', status: '1' },
+        2: { text: '已注销', status: '2' },
+        3: { text: '已删除', status: '3' },
+      },
+    },
     // {
     //   title: '上次调度时间',
     //   dataIndex: 'updatedAt',
@@ -204,7 +205,7 @@ const TableList: React.FC<{}> = () => {
               }
             }
           }}
-          rowKey="key"
+          rowKey="id"
           type="form"
           columns={columns}
           rowSelection={{}}
