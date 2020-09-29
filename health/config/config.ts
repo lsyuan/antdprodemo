@@ -10,7 +10,7 @@ export default defineConfig({
     hmr: true,
   },
   layout: {
-    name: '智物云卫生信息标准应用服务平台',
+    name: 'XXX',
     locale: true,
     siderWidth: 208,
   },
