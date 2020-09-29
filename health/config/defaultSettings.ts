@@ -12,7 +12,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: '智物云卫生信息标准服务平台',
+  title: 'XXX',
   pwa: false,
   iconfontUrl: '',
 } as LayoutSettings & {

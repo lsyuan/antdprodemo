@@ -4,13 +4,13 @@ import { DefaultFooter } from '@ant-design/pro-layout';
 
 export default () => (
   <DefaultFooter
-    copyright="2020 成都智物云科技有限公司"
+    copyright="2020 XXX"
     links={[
       {
-        key: 'Zhiwuyun',
-        title: '智物云官网',
+        key: 'XXX',
+        title: 'XXX',
         // title: <GithubOutlined />,
-        href: 'http://www.zhiwuyun.cn',
+        href: 'http://www.baidu.com',
         blankTarget: true,
       }, 
     ]}

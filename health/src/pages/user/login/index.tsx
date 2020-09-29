@@ -89,10 +89,10 @@ const Login: React.FC<{}> = () => {
           <div className={styles.header}>
             <Link to="/">
               <img alt="logo" className={styles.logo} src={logo} />
-              <span className={styles.title}>智物云</span>
+              <span className={styles.title}>XXX</span>
             </Link>
           </div>
-          <div className={styles.desc}>卫生信息标准应用服务平台(1.0)</div>
+          <div className={styles.desc}>XXXXX(1.0)</div>
         </div>
 
         <div className={styles.main}>
